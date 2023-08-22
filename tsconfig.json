@@ -18,7 +18,10 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@/*" :["./src/*"]
+      "@home" :["src/home/*"],
+      "@guard" :["src/guard/*"],
+      "@prisma" :["src/prisma/*"],
+      "@user" :["src/user/*"]
     }
   }
 }
