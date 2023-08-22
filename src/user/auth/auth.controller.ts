@@ -8,10 +8,10 @@ import {
   Get,
 } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
-import { AuthService } from './auth.service';
-import { GenerateProductKeyDto, SignInDto, SignUpDto } from '../auth.dto';
+import { AuthService } from '@user/auth/auth.service';
+import { GenerateProductKeyDto, SignInDto, SignUpDto } from '@user/auth.dto';
 import { UserType } from '@prisma/client';
-import { User, UserInfo } from '../decorators/user.decorator';
+import { User, UserInfo } from '@user/decorators/user.decorator';
 
 @Controller('auth')
 export class AuthController {

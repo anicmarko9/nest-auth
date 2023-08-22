@@ -1,7 +1,7 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import * as jwt from 'jsonwebtoken';
-import { PrismaService } from './../prisma/prisma.service';
+import { PrismaService } from '@prisma/prisma.service';
 
 interface JWTPayload {
   id: number;
