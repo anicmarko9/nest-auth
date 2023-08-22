@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HomeController } from './home.controller';
-import { HomeService } from './home.service';
+import { HomeController } from '@home/home.controller';
+import { HomeService } from '@home/home.service';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import {
   ClassSerializerInterceptor,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PrismaService } from './../prisma/prisma.service';
+import { PrismaService } from '@prisma/prisma.service';
 import { PropertyType } from '@prisma/client';
 
 const mockUser = {
