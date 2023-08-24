@@ -1,9 +1,16 @@
 {
   "moduleFileExtensions": ["js", "json", "ts"],
   "rootDir": ".",
+  "modulePaths": ["<rootDir>"],
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@home/(.*)$": "<rootDir>/../src/home/$1",
+    "^@user/(.*)$": "<rootDir>/../src/user/$1",
+    "^@guard/(.*)$": "<rootDir>/../src/guard/$1",
+    "^@prisma/(.*)$": "<rootDir>/../src/prisma/$1"
   }
 }
