@@ -18,7 +18,10 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "ci:format": "prettier --check \"{src,apps,libs,test}/**/*.ts\"",
+    "ci:lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "ci:test": "jest --ci --coverage --passWithNoTests && jest --config ./test/jest-e2e.json --ci --coverage --passWithNoTests --detectOpenHandles"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -65,7 +68,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "./",
+    "rootDir": "./src",
     "modulePaths": [
       "<rootDir>"
     ],
@@ -76,13 +79,14 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "./coverage",
+    "coverageDirectory": "./../coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "^@home/(.*)$": "<rootDir>/src/home/$1",
-      "^@user/(.*)$": "<rootDir>/src/user/$1",
-      "^@guard/(.*)$": "<rootDir>/src/guard/$1",
-      "^@prisma/(.*)$": "<rootDir>/src/prisma/$1"
+      "^@/(.*)$": "<rootDir>/$1",
+      "^@Home/(.*)$": "<rootDir>/home/$1",
+      "^@User/(.*)$": "<rootDir>/user/$1",
+      "^@Guard/(.*)$": "<rootDir>/guard/$1",
+      "^@Prisma/(.*)$": "<rootDir>/prisma/$1"
     }
   }
 }

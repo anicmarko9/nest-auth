@@ -1,4 +1,3 @@
-import { PropertyType } from '@prisma/client';
 import { Exclude, Expose, Type } from 'class-transformer';
 import {
   IsArray,
@@ -10,6 +9,7 @@ import {
   IsString,
   ValidateNested,
 } from 'class-validator';
+import { PropertyType } from '@prisma/client';
 
 export class HomeResponseDto {
   constructor(partial: Partial<HomeResponseDto>) {

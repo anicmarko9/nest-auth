@@ -1,8 +1,9 @@
 import { ClassSerializerInterceptor, Module } from '@nestjs/common';
-import { HomeController } from '@home/home.controller';
-import { HomeService } from '@home/home.service';
-import { PrismaModule } from '@prisma/prisma.module';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+
+import { HomeController } from '@Home/home.controller';
+import { HomeService } from '@Home/home.service';
+import { PrismaModule } from '@Prisma/prisma.module';
 
 @Module({
   imports: [PrismaModule],

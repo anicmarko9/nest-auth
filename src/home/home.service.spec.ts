@@ -1,9 +1,10 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { HomeService } from '@home/home.service';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ClassSerializerInterceptor, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '@prisma/prisma.service';
+import { Test, TestingModule } from '@nestjs/testing';
 import { PropertyType } from '@prisma/client';
+
+import { HomeService } from '@Home/home.service';
+import { PrismaService } from '@Prisma/prisma.service';
 
 const mockGetHomes = [
   {

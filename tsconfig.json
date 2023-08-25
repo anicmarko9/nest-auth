@@ -9,7 +9,7 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src/",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -18,10 +18,11 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@home/*": ["src/home/*"],
-      "@user/*": ["src/user/*"],
-      "@guard/*": ["src/guard/*"],
-      "@prisma/*": ["src/prisma/*"]
+      "@/*": ["*"],
+      "@Home/*": ["home/*"],
+      "@User/*": ["user/*"],
+      "@Guard/*": ["guard/*"],
+      "@Prisma/*": ["prisma/*"]
     }
   }
 }
