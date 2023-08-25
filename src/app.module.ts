@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from '@user/user.module';
-import { PrismaModule } from '@prisma/prisma.module';
-import { HomeModule } from '@home/home.module';
-import { UserInterceptor } from '@user/interceptors/user.interceptor';
-import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
-import { AuthGuard } from '@guard/auth.guard';
+import { UserModule } from '@User/user.module';
+import { PrismaModule } from '@Prisma/prisma.module';
+import { HomeModule } from '@Home/home.module';
+import { UserInterceptor } from '@User/interceptors/user.interceptor';
+import { AuthGuard } from '@Guard/auth.guard';
 
 @Module({
   imports: [UserModule, PrismaModule, HomeModule],

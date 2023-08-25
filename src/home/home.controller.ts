@@ -10,16 +10,17 @@ import {
   Query,
   UnauthorizedException,
 } from '@nestjs/common';
-import { HomeService } from '@home/home.service';
+import { PropertyType, UserType } from '@prisma/client';
+
+import { HomeService } from '@Home/home.service';
+import { User, UserInfo } from '@User/decorators/user.decorator';
+import { Roles } from '@User/decorators/roles.decorator';
 import {
   CreateHomeDto,
   HomeResponseDto,
   InquireDto,
   UpdateHomeDto,
-} from '@home/home.dto';
-import { PropertyType, UserType } from '@prisma/client';
-import { User, UserInfo } from '@user/decorators/user.decorator';
-import { Roles } from '@user/decorators/roles.decorator';
+} from '@Home/home.dto';
 
 @Controller('home')
 export class HomeController {

@@ -1,16 +1,18 @@
 {
   "moduleFileExtensions": ["js", "json", "ts"],
-  "rootDir": ".",
+  "rootDir": "./../src",
   "modulePaths": ["<rootDir>"],
+  "coverageDirectory": "./../coverage",
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
   "moduleNameMapper": {
-    "^@home/(.*)$": "<rootDir>/../src/home/$1",
-    "^@user/(.*)$": "<rootDir>/../src/user/$1",
-    "^@guard/(.*)$": "<rootDir>/../src/guard/$1",
-    "^@prisma/(.*)$": "<rootDir>/../src/prisma/$1"
+    "^@/(.*)$": "<rootDir>/$1",
+    "^@Home/(.*)$": "<rootDir>/home/$1",
+    "^@User/(.*)$": "<rootDir>/user/$1",
+    "^@Guard/(.*)$": "<rootDir>/guard/$1",
+    "^@Prisma/(.*)$": "<rootDir>/prisma/$1"
   }
 }

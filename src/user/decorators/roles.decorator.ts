@@ -1,6 +1,5 @@
-import { SetMetadata } from '@nestjs/common';
+import { CustomDecorator, SetMetadata } from '@nestjs/common';
 import { UserType } from '@prisma/client';
 
-export const Roles = (...roles: UserType[]) => SetMetadata('roles', roles);
-
-// @Roles(UserType.REALTOR)
+export const Roles = (...roles: UserType[]): CustomDecorator<string> =>
+  SetMetadata('roles', roles);
