@@ -1,0 +1,18 @@
+version: '3.8'
+name: production
+services:
+  backend:
+    container_name: backend
+    image: anicmarko9/nest-auth-prod:1.0
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    env_file: .env
+    networks:
+      - back
+networks:
+  back:
+    name: back
