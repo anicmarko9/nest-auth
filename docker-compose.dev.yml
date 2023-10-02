@@ -1,0 +1,35 @@
+version: '3.8'
+name: development
+services:
+  backend:
+    container_name: backend
+    image: anicmarko9/nest-auth:1.0
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 5000:5000
+    env_file: .env
+    depends_on:
+      - database
+    networks:
+      - back
+  database:
+    container_name: database
+    image: postgres:15-alpine
+    restart: on-failure
+    ports:
+      - 5432:5432
+    env_file: .postgres.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - back
+volumes:
+  postgres:
+    name: postgres
+    driver: local
+networks:
+  back:
+    name: back
